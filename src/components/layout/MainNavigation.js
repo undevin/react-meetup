@@ -3,7 +3,7 @@ import { useContext } from "react";
 import classes from "./MainNavigation.module.css";
 import FavoritesContext from "../../store/favorites-context";
 
-function MainNavigation() {
+const MainNavigation = () => {
   const favoritesCtx = useContext(FavoritesContext);
 
   return (
@@ -29,6 +29,6 @@ function MainNavigation() {
       </nav>
     </header>
   );
-}
+};
 
 export default MainNavigation;
