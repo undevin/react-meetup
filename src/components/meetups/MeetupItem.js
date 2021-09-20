@@ -3,11 +3,11 @@ import Card from "../ui/Card";
 import classes from "./MeetupItem.module.css";
 import FavoritesContext from "../../store/favorites-context";
 
-function MeetupItem(props) {
+const MeetupItem = (props) => {
   const favoritesCtx = useContext(FavoritesContext);
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
-  function toggleFavoriteStatus() {
+  const toggleFavoriteStatus = () => {
     if (itemIsFavorite) {
         favoritesCtx.removeFavorite(props.id);
     } else {
@@ -18,8 +18,8 @@ function MeetupItem(props) {
         address: props.address,
         description: props.description,
       });
-    }
-  }
+    };
+  };
 
   return (
     <li className={classes.item}>
@@ -38,6 +38,6 @@ function MeetupItem(props) {
       </Card>
     </li>
   );
-}
+};
 
 export default MeetupItem;
